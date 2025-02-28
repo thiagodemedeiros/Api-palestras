@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/criar_palestra.css') }}">
 </head>
 <body>
-    <form method="POST" action="/criar_palestra">
+    <form method="POST" action="/criar_palestra" class="formulario">
         <div class="informacao">
             <h3>Titulo da palestra</h3>
             <input type="text" id='nome_palestra' name='nome_palestra' required>
@@ -21,7 +22,12 @@
         </div>
         <br/>
         <button type="submit">Enviar Informações</button>
+        <br/><br/>    
     </form>
+
+    <a href="/">
+        <button>Voltar para Home</button>
+    </a>
 
     {% if status %}
         <h5>Status: {{status}}</h5>

@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 FASTAPI_ENVIAR_PALESTRA = "http://127.0.0.1:8000/palestra/"
 
+@app.route('/')
+def home():
+     return render_template('home.html')
+
 @app.route('/criar_palestra', methods=['GET', 'POST'])
 def criar_palestra():
     if request.method == 'POST':
