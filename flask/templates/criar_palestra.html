@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/criar_palestra">
+        <div class="informacao">
+            <h3>Titulo da palestra</h3>
+            <input type="text" id='nome_palestra' name='nome_palestra' required>
+        </div>
+        <div class="informacao">
+            <h3>Palestrante</h3>
+            <input type="text" id='palestrante' name='palestrante' required>
+        </div>
+        <div class="informacao">
+            <h3>Tema</h3>
+            <input type="text" id='tema' name='tema' required>
+        </div>
+        <br/>
+        <button type="submit">Enviar Informações</button>
+    </form>
+
+    {% if status %}
+        <h5>Status: {{status}}</h5>
+    {% endif %}
+</body>
+</html>
