@@ -28,7 +28,16 @@ def salvar_palestras(palestras):
 @app.post('/palestra')
 async def criar_palestra(palestra: Palestra):
     palestras = carregar_palestras()
-    palestras.append(palestra.dict())
+    novo_id_palestra = len(palestras)
+    
+    nova_palestra = {
+        'id' : novo_id_palestra,
+        'nome_palestra' : palestra.nome_palestra,
+        "palestrante": palestra.palestrante,
+        "tema": palestra.tema
+    }
+    
+    palestras.append(nova_palestra)
     salvar_palestras(palestras)
     return {
         'status' : 'Sucesso',

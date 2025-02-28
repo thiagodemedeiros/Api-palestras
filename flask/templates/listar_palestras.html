@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listar_palestras.css') }}">
+</head>
+<body>
+    <h1>Lista de Palestras</h1>
+
+    <ul>
+        {% for palestra in palestras %}
+            <li>
+                <h4>Nome: {{ palestra.nome_palestra }}</h4>
+                <h4>Palestrante: {{ palestra.palestrante }}</h4>
+                <h4>Tema: {{ palestra.tema }}</h4>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">
+        <button>Voltar para Home</button>
+    </a>
+</body>
+</html>
